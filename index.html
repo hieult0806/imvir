@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Artist Portfolio - Showcasing creative works and artistic vision">
-    <title>Artist Portfolio</title>
+    <title>Artist Portfolio | Creative Vision</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cursor Follower -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loader"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">Artist Name</div>
+            <div class="logo">
+                <span class="logo-initial">A</span>
+                <span class="logo-text">rtist</span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -28,19 +46,66 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
         <div class="hero-content">
-            <h1 class="hero-title">Welcome to My Creative Space</h1>
-            <p class="hero-subtitle">Exploring art through colors, forms, and imagination</p>
-            <a href="#gallery" class="cta-button">View My Work</a>
+            <div class="hero-tag">Welcome to my world</div>
+            <h1 class="hero-title">
+                <span class="title-line">Creating</span>
+                <span class="title-line">Visual</span>
+                <span class="title-line highlight">Stories</span>
+            </h1>
+            <p class="hero-subtitle">Where imagination meets artistry in every brushstroke</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="cta-button primary">Explore Gallery</a>
+                <a href="#contact" class="cta-button secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p>Artworks Created</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="50">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <p>Awards Won</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="8">0</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">Gallery</h2>
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Works</h2>
+                <p class="section-subtitle">A collection of my most recent and favorite pieces</p>
+            </div>
             <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn active" data-filter="all">All Works</button>
                 <button class="filter-btn" data-filter="paintings">Paintings</button>
                 <button class="filter-btn" data-filter="digital">Digital Art</button>
                 <button class="filter-btn" data-filter="sketches">Sketches</button>
@@ -48,45 +113,102 @@
             <div class="gallery-grid">
                 <!-- Placeholder artworks - replace with actual images -->
                 <div class="gallery-item" data-category="paintings">
-                    <img src="https://via.placeholder.com/400x300/ff6b6b/ffffff?text=Painting+1" alt="Painting 1">
-                    <div class="overlay">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=800&fit=crop" alt="Painting 1">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
                         <h3>Sunset Dreams</h3>
-                        <p>Oil on Canvas, 2024</p>
+                        <p>Oil on Canvas</p>
+                        <span class="view-more">View Details</span>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="digital">
-                    <img src="https://via.placeholder.com/400x300/4ecdc4/ffffff?text=Digital+Art+1" alt="Digital Art 1">
-                    <div class="overlay">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&h=800&fit=crop" alt="Digital Art 1">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
                         <h3>Digital Landscape</h3>
-                        <p>Digital Illustration, 2024</p>
+                        <p>Digital Illustration</p>
+                        <span class="view-more">View Details</span>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="sketches">
-                    <img src="https://via.placeholder.com/400x300/95e1d3/ffffff?text=Sketch+1" alt="Sketch 1">
-                    <div class="overlay">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=800&fit=crop" alt="Sketch 1">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
                         <h3>Portrait Study</h3>
-                        <p>Graphite on Paper, 2024</p>
+                        <p>Graphite on Paper</p>
+                        <span class="view-more">View Details</span>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="paintings">
-                    <img src="https://via.placeholder.com/400x300/f38181/ffffff?text=Painting+2" alt="Painting 2">
-                    <div class="overlay">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=800&fit=crop" alt="Painting 2">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
                         <h3>Abstract Emotion</h3>
-                        <p>Acrylic on Canvas, 2024</p>
+                        <p>Acrylic on Canvas</p>
+                        <span class="view-more">View Details</span>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="digital">
-                    <img src="https://via.placeholder.com/400x300/aa96da/ffffff?text=Digital+Art+2" alt="Digital Art 2">
-                    <div class="overlay">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&h=800&fit=crop" alt="Digital Art 2">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
                         <h3>Cyberpunk City</h3>
-                        <p>Digital Art, 2024</p>
+                        <p>Digital Art</p>
+                        <span class="view-more">View Details</span>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="sketches">
-                    <img src="https://via.placeholder.com/400x300/fcbad3/ffffff?text=Sketch+2" alt="Sketch 2">
-                    <div class="overlay">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=800&fit=crop" alt="Sketch 2">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
                         <h3>Nature Study</h3>
-                        <p>Ink on Paper, 2024</p>
+                        <p>Ink on Paper</p>
+                        <span class="view-more">View Details</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="paintings">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&h=800&fit=crop" alt="Painting 3">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Mystic Forest</h3>
+                        <p>Watercolor</p>
+                        <span class="view-more">View Details</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="digital">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=600&h=800&fit=crop" alt="Digital Art 3">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Neon Dreams</h3>
+                        <p>3D Art</p>
+                        <span class="view-more">View Details</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="sketches">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1576185615659-b4dda3f27af7?w=600&h=800&fit=crop" alt="Sketch 3">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Urban Life</h3>
+                        <p>Charcoal Drawing</p>
+                        <span class="view-more">View Details</span>
                     </div>
                 </div>
             </div>
@@ -98,24 +220,55 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/400x500/6c5ce7/ffffff?text=Artist+Photo" alt="Artist">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop" alt="Artist">
+                        <div class="frame-decoration"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <h3>8+</h3>
+                        <p>Years of<br>Experience</p>
+                    </div>
                 </div>
                 <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
-                    <p>I'm a passionate artist dedicated to exploring the boundaries between traditional and digital art. My work focuses on capturing emotions and stories through vibrant colors and dynamic compositions.</p>
-                    <p>With over 5 years of experience in various mediums, I've developed a unique style that blends realism with abstract expressionism. Each piece tells a story, inviting viewers to interpret and connect with the artwork on a personal level.</p>
+                    <div class="section-header">
+                        <span class="section-tag">About</span>
+                        <h2 class="section-title">Passion Meets Purpose</h2>
+                    </div>
+                    <p class="lead-text">I'm a passionate artist dedicated to exploring the boundaries between traditional and digital art, creating pieces that resonate with emotion and meaning.</p>
+                    <p>My work focuses on capturing emotions and stories through vibrant colors and dynamic compositions. With over 8 years of experience in various mediums, I've developed a unique style that blends realism with abstract expressionism.</p>
+                    <p>Each piece tells a story, inviting viewers to interpret and connect with the artwork on a personal level. I believe art should evoke feelings and spark conversations.</p>
+
                     <div class="skills">
-                        <div class="skill-item">
-                            <h3>Oil Painting</h3>
-                        </div>
-                        <div class="skill-item">
-                            <h3>Digital Art</h3>
-                        </div>
-                        <div class="skill-item">
-                            <h3>Sketching</h3>
-                        </div>
-                        <div class="skill-item">
-                            <h3>Illustration</h3>
+                        <h3 class="skills-title">Areas of Expertise</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-icon">🎨</div>
+                                <div class="skill-content">
+                                    <h4>Oil Painting</h4>
+                                    <p>Traditional techniques with modern vision</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">💻</div>
+                                <div class="skill-content">
+                                    <h4>Digital Art</h4>
+                                    <p>Creating stunning digital masterpieces</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">✏️</div>
+                                <div class="skill-content">
+                                    <h4>Sketching</h4>
+                                    <p>Bringing ideas to life on paper</p>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🖼️</div>
+                                <div class="skill-content">
+                                    <h4>Illustration</h4>
+                                    <p>Visual storytelling through imagery</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,27 +279,69 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header center">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's Create Together</h2>
+                <p class="section-subtitle">Have a project in mind? Let's discuss how we can bring your vision to life</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
                         <h3>Email</h3>
                         <p>artist@example.com</p>
                     </div>
-                    <div class="contact-item">
-                        <h3>Social Media</h3>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>New York, USA</p>
+                    </div>
+                    <div class="contact-card social-card">
+                        <h3>Follow Me</h3>
                         <div class="social-links">
-                            <a href="#" target="_blank">Instagram</a>
-                            <a href="#" target="_blank">Twitter</a>
-                            <a href="#" target="_blank">Behance</a>
+                            <a href="#" target="_blank" class="social-link">
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <span>Behance</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <span>Dribbble</span>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder=" " required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M19 1L9 11M19 1L13 19L9 11M19 1L1 7L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
@@ -155,15 +350,49 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Artist Portfolio. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-initial">A</span>
+                        <span class="logo-text">rtist</span>
+                    </div>
+                    <p>Creating visual stories that inspire and connect.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to get latest artwork updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Artist Portfolio. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div class="lightbox-caption"></div>
+        <div class="lightbox-container">
+            <img class="lightbox-content" id="lightbox-img">
+            <div class="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav prev">❮</button>
+        <button class="lightbox-nav next">❯</button>
     </div>
 
     <script src="script.js"></script>
