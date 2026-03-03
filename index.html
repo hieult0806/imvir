@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -218,20 +221,28 @@
                 </div>
                 <div class="artwork-images">
                     <div class="main-image">
-                        <img src="images/1.png"
-                             alt="Phương án Vươn Cao — Mặt trước, điêu khắc tròn không gian với các đĩa tròn và tuyến cong xoắn"
-                             class="artwork-img"
-                             loading="lazy">
+                        <a href="images/1.png" class="glightbox" data-gallery="artwork1" data-description="Phương án Vươn Cao — Mặt trước">
+                            <img src="images/1.png"
+                                 alt="Phương án Vươn Cao — Mặt trước, điêu khắc tròn không gian với các đĩa tròn và tuyến cong xoắn"
+                                 class="artwork-img"
+                                 loading="lazy">
+                        </a>
                     </div>
                     <div class="thumb-grid">
                         <div class="thumb-item">
-                            <img src="images/2.png" alt="Phương án Vươn Cao — Góc nhìn thứ hai" loading="lazy">
+                            <a href="images/2.png" class="glightbox" data-gallery="artwork1" data-description="Phương án Vươn Cao — Góc nhìn thứ hai">
+                                <img src="images/2.png" alt="Phương án Vươn Cao — Góc nhìn thứ hai" loading="lazy">
+                            </a>
                         </div>
                         <div class="thumb-item">
-                            <img src="images/3.png" alt="Phương án Vươn Cao — Góc nhìn thứ ba" loading="lazy">
+                            <a href="images/3.png" class="glightbox" data-gallery="artwork1" data-description="Phương án Vươn Cao — Góc nhìn thứ ba">
+                                <img src="images/3.png" alt="Phương án Vươn Cao — Góc nhìn thứ ba" loading="lazy">
+                            </a>
                         </div>
                         <div class="thumb-item">
-                            <img src="images/tp1.1.png" alt="Phương án Vươn Cao — Bối cảnh trước Nhà hát Quan họ" loading="lazy">
+                            <a href="images/tp1.1.png" class="glightbox" data-gallery="artwork1" data-description="Phương án Vươn Cao — Bối cảnh trước Nhà hát">
+                                <img src="images/tp1.1.png" alt="Phương án Vươn Cao — Bối cảnh trước Nhà hát Quan họ" loading="lazy">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -241,20 +252,28 @@
             <div class="artwork artwork-reverse">
                 <div class="artwork-images">
                     <div class="main-image">
-                        <img src="images/4.png"
-                             alt="Phương án Trải Ngang — Mặt trước, phù điêu tường với các đĩa đồng trên nền xanh ngọc"
-                             class="artwork-img"
-                             loading="lazy">
+                        <a href="images/4.png" class="glightbox" data-gallery="artwork2" data-description="Phương án Trải Ngang — Mặt trước">
+                            <img src="images/4.png"
+                                 alt="Phương án Trải Ngang — Mặt trước, phù điêu tường với các đĩa đồng trên nền xanh ngọc"
+                                 class="artwork-img"
+                                 loading="lazy">
+                        </a>
                     </div>
                     <div class="thumb-grid">
                         <div class="thumb-item">
-                            <img src="images/5.png" alt="Phương án Trải Ngang — Phối cảnh từ trái" loading="lazy">
+                            <a href="images/5.png" class="glightbox" data-gallery="artwork2" data-description="Phương án Trải Ngang — Phối cảnh từ trái">
+                                <img src="images/5.png" alt="Phương án Trải Ngang — Phối cảnh từ trái" loading="lazy">
+                            </a>
                         </div>
                         <div class="thumb-item">
-                            <img src="images/6.png" alt="Phương án Trải Ngang — Phối cảnh từ phải" loading="lazy">
+                            <a href="images/6.png" class="glightbox" data-gallery="artwork2" data-description="Phương án Trải Ngang — Phối cảnh từ phải">
+                                <img src="images/6.png" alt="Phương án Trải Ngang — Phối cảnh từ phải" loading="lazy">
+                            </a>
                         </div>
                         <div class="thumb-item">
-                            <img src="images/tp2.png" alt="Phương án Trải Ngang — Bối cảnh trong sảnh lớn" loading="lazy">
+                            <a href="images/tp2.png" class="glightbox" data-gallery="artwork2" data-description="Phương án Trải Ngang — Bối cảnh trong sảnh lớn">
+                                <img src="images/tp2.png" alt="Phương án Trải Ngang — Bối cảnh trong sảnh lớn" loading="lazy">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -385,13 +404,8 @@
         </div>
     </footer>
 
-    <!-- Image Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" aria-label="Đóng">&times;</button>
-        <img class="lightbox-img" id="lightboxImg" alt="">
-    </div>
-
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="js/book.js"></script>
 </body>
 </html>

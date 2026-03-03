@@ -1,7 +1,7 @@
 /**
  * Landing Page Navigation & Interactions
- * Handles smooth scrolling, navbar behavior, theme toggle,
- * image lightbox, thumbnail swap, lazy loading, and scroll effects
+ * Handles smooth scrolling, navbar behavior, GLightbox,
+ * lazy loading, and scroll effects
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -90,57 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // === Image Lightbox ===
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-
-    if (lightbox && lightboxImg) {
-        // Open lightbox on artwork image click
-        document.querySelectorAll('.main-image img, .thumb-item img').forEach(img => {
-            img.addEventListener('click', (e) => {
-                e.stopPropagation();
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close lightbox
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        lightbox.addEventListener('click', closeLightbox);
-        document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                closeLightbox();
-            }
+    // === GLightbox ===
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({
+            touchNavigation: true,
+            loop: true,
+            closeOnOutsideClick: true
         });
     }
-
-    // === Thumbnail to Main Image Swap ===
-    document.querySelectorAll('.artwork-images').forEach(container => {
-        const mainImg = container.querySelector('.main-image img');
-        const thumbs = container.querySelectorAll('.thumb-item img');
-
-        if (!mainImg) return;
-
-        thumbs.forEach(thumb => {
-            thumb.addEventListener('click', (e) => {
-                e.stopPropagation();
-                // Swap src and alt between main and clicked thumb
-                const tempSrc = mainImg.src;
-                const tempAlt = mainImg.alt;
-                mainImg.src = thumb.src;
-                mainImg.alt = thumb.alt;
-                thumb.src = tempSrc;
-                thumb.alt = tempAlt;
-            });
-        });
-    });
 
     // === Parallax on Theater Section ===
     const theaterImg = document.querySelector('.section-image-wrapper .section-img');
