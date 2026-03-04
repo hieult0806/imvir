@@ -1078,6 +1078,14 @@ img[loading="lazy"].loaded {
         gap: 3rem;
     }
 
+    .artwork-reverse .artwork-images {
+        order: 2;
+    }
+
+    .artwork-reverse .artwork-content {
+        order: 1;
+    }
+
     .meaning-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
