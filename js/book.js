@@ -115,45 +115,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === Scroll Reveal Animations with Stagger ===
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -80px 0px'
-    };
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-
-                // Stagger child elements
-                const staggerChildren = entry.target.querySelectorAll(
-                    '.detail-item, .meaning-card, .thumb-item, .footer-item, .eval-list li'
-                );
-                staggerChildren.forEach((child, i) => {
-                    child.style.transitionDelay = `${i * 0.1}s`;
-                    child.style.opacity = '1';
-                    child.style.transform = 'translateY(0)';
-                });
-            }
-        });
-    }, observerOptions);
-
-    // Observe sections, artworks, and footer for reveal
     const animatedElements = document.querySelectorAll('.section, .artwork, .footer');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        revealObserver.observe(el);
-    });
+    const staggerElements = document.querySelectorAll(
+        '.detail-item, .meaning-card, .thumb-item, .footer-item, .eval-list li'
+    );
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+    const canUseReveal = ('IntersectionObserver' in window) && !prefersReducedMotion && !isMobileViewport;
 
-    // Set up stagger children initial state
-    document.querySelectorAll('.detail-item, .meaning-card, .thumb-item, .footer-item, .eval-list li').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
+    if (canUseReveal) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+
+                    // Stagger child elements
+                    const staggerChildren = entry.target.querySelectorAll(
+                        '.detail-item, .meaning-card, .thumb-item, .footer-item, .eval-list li'
+                    );
+                    staggerChildren.forEach((child, i) => {
+                        child.style.transitionDelay = `${i * 0.1}s`;
+                        child.style.opacity = '1';
+                        child.style.transform = 'translateY(0)';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections, artworks, and footer for reveal
+        animatedElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            revealObserver.observe(el);
+        });
+
+        // Set up stagger children initial state
+        staggerElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+    } else {
+        // Fallback: never hide content on mobile / reduced-motion / unsupported browsers.
+        animatedElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+        staggerElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    }
 
     // Initialize hero as visible
     const heroSection = document.querySelector('.hero');

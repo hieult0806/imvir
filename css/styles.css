@@ -661,10 +661,6 @@ body {
     gap: 1rem;
 }
 
-.main-image {
-    min-height: 450px;
-}
-
 .thumb-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -769,7 +765,7 @@ body {
 
 /* Lazy-load fade-in */
 img[loading="lazy"] {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.6s ease;
 }
 
